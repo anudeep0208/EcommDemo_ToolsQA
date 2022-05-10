@@ -5,11 +5,15 @@
 
 package org.ecomm.Baseclass;
 
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 
 public class BaseClass {
 	
 	public WebDriver driver;
+	public Properties prop;
+	
 	
 	public void loadProperties() {
 		//Load properties class
