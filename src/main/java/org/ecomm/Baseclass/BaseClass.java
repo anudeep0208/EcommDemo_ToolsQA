@@ -14,5 +14,7 @@ public class BaseClass {
 	public void launchWebDriver() {
 		//launch WebDriver
 	}
-
+	public void launchapp() {
+		
+	}
 }
