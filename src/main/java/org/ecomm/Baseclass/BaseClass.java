@@ -26,7 +26,7 @@ public class BaseClass {
 
 	public void createimgfile() {
 		
-		
+		//imgfile
 	}
 
 }
