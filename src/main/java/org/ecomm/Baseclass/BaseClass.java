@@ -14,7 +14,15 @@ public class BaseClass {
 	public void launchWebDriver() {
 		//launch WebDriver
 	}
-	public void launchapp() {
+
+
+	public void launchapp(){
+		//add code here
+	}
+	
+	public void takescreenshots() {
 		
 	}
+
+
 }
