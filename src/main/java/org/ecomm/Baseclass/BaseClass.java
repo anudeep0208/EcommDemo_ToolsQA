@@ -21,8 +21,12 @@ public class BaseClass {
 	}
 	
 	public void takescreenshots() {
-		
+		//takesscreenshot
 	}
 
+	public void createimgfile() {
+		
+		
+	}
 
 }
