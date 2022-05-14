@@ -5,9 +5,11 @@
     <classes>
       <class name="org.ecomm.tests.LoginTest">
         <methods>
+          <include name="loadProperties"/>
           <include name="launchWebDriver"/>
           <include name="LoginTestmethod"/>
           <include name="launchapp"/>
+          <include name="closebrowser"/>
         </methods>
       </class> <!-- org.ecomm.tests.LoginTest -->
     </classes>

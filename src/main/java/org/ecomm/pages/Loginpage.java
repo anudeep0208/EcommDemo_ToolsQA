@@ -1,4 +1,4 @@
-package org.ecomm.Baseclass;
+package org.ecomm.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,8 +27,8 @@ public class Loginpage {
 	@FindBy(xpath = "//button[normalize-space()='Log in']") 
 	private WebElement LoginButton;
 	
-	public WebElement LoginHeader() {
-		return LoginHeader;
+	public boolean ValidateLoginHeader() {
+		return LoginHeader.isDisplayed();
 	}
 	
 	public WebElement Username() {
@@ -42,6 +42,15 @@ public class Loginpage {
 	public WebElement LoginButton() {
 		return LoginButton;
 	}
+	
+	public MyAccountpage performLogin(String Cust_username, String Cust_password) {
+		
+		Username.sendKeys(Cust_username);
+		Password.sendKeys(Cust_password);
+		LoginButton.click();
+		return new MyAccountpage(driver);
+	}
+	
 	
 	
 }

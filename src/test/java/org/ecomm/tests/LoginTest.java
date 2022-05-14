@@ -1,10 +1,9 @@
 package org.ecomm.tests;
 
 import org.ecomm.Baseclass.BaseClass;
-import org.ecomm.Baseclass.Homepage;
-import org.ecomm.Baseclass.Loginpage;
-import org.ecomm.Baseclass.MyAccounthome;
-import org.openqa.selenium.By;
+import org.ecomm.pages.Homepage;
+import org.ecomm.pages.Loginpage;
+import org.ecomm.pages.MyAccountpage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,25 +11,32 @@ public class LoginTest extends BaseClass {
 
 	public Homepage homepage;
 	public Loginpage loginpage;
-	public MyAccounthome myaccounthomepage;
-	
-	@Test
-	public void LoginTestmethod() {
-		
+	public MyAccountpage myaccounthomepage;
+
+	@Test(priority = 1)
+	public void LaunchAppandValidatepage() {
+
 		homepage = new Homepage(driver);
-		homepage.DismissButton().click();
-		homepage.MyAccountLink().click();
-		
-		loginpage = new Loginpage(driver);
-		Assert.assertTrue(loginpage.LoginHeader().isDisplayed());
-		loginpage.Username().sendKeys(prop.getProperty("useremail"));
-		loginpage.Password().sendKeys(prop.getProperty("userpassword"));
-		loginpage.LoginButton().click();
-		
-		myaccounthomepage = new MyAccounthome(driver);
-		Assert.assertTrue(myaccounthomepage.Content().isDisplayed());
-		myaccounthomepage.Logoutlink().click();
-		Assert.assertTrue(loginpage.LoginHeader().isDisplayed());
+		homepage.ClickDismissButton();
+		Assert.assertTrue(homepage.ValidateLogo());
 	}
-	
+
+	@Test(priority = 2)
+	public void Navigatetologinpage() {
+		loginpage = homepage.ClickMyAccountLink();
+		Assert.assertTrue(loginpage.ValidateLoginHeader());
+	}
+
+	@Test(priority = 3)
+	public void LogintoApplication() {
+		myaccounthomepage = loginpage.performLogin(GetProperty("useremail"), GetProperty("userpassword"));
+		Assert.assertTrue(myaccounthomepage.ValidateContent());
+		Assert.assertTrue(myaccounthomepage.ValidateMyAccountMenu());
+	}
+	@Test(priority = 4)
+	public void LogoutfromApplication() {
+		myaccounthomepage.ClickLogoutlink();
+		Assert.assertTrue(loginpage.ValidateLoginHeader());
+	}
+
 }

@@ -1,4 +1,4 @@
-package org.ecomm.Baseclass;
+package org.ecomm.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +15,11 @@ public class Homepage {
 	@FindBy(xpath = "//a[normalize-space()='My Account']") 
 	private WebElement MyAccount;
 	
+	@FindBy(xpath = "//a[@class='custom-logo-link']//img[@alt='ToolsQA Demo Site']") 
+	private WebElement Logo;
+	
+//constructor implementation
+	
 	public Homepage(WebDriver driver) {
 		
 		this.driver = driver;
@@ -22,12 +27,17 @@ public class Homepage {
 
 	}
 	
-	public WebElement DismissButton() {
-		return Dismiss;
+	public void ClickDismissButton() {
+		Dismiss.click();
 	}
 	
-	public WebElement MyAccountLink() {
-		return MyAccount;
+	public Loginpage ClickMyAccountLink() {
+		 MyAccount.click();
+		 return new Loginpage(driver);
+	}
+	
+	public boolean ValidateLogo() {
+		 return Logo.isDisplayed();
 	}
 	
 }
