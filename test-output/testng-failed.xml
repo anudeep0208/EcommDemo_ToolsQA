@@ -7,7 +7,7 @@
         <methods>
           <include name="loadProperties"/>
           <include name="launchWebDriver"/>
-          <include name="LoginTestmethod"/>
+          <include name="LaunchAppandValidatepage"/>
           <include name="launchapp"/>
           <include name="closebrowser"/>
         </methods>

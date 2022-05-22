@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="org.ecomm.tests.LoginTest"/>
+      <class name="org.ecomm.tests.ProductsearchTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

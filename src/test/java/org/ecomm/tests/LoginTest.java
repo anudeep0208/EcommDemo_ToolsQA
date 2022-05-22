@@ -32,11 +32,7 @@ public class LoginTest extends BaseClass {
 		myaccounthomepage = loginpage.performLogin(GetProperty("useremail"), GetProperty("userpassword"));
 		Assert.assertTrue(myaccounthomepage.ValidateContent());
 		Assert.assertTrue(myaccounthomepage.ValidateMyAccountMenu());
-	}
-	@Test(priority = 4)
-	public void LogoutfromApplication() {
-		myaccounthomepage.ClickLogoutlink();
-		Assert.assertTrue(loginpage.ValidateLoginHeader());
+		homepage = myaccounthomepage.Clickhomeicon();
 	}
 
 }

@@ -1,5 +1,6 @@
 package org.ecomm.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,14 +10,19 @@ public class MyAccountpage {
 
 	public WebDriver driver;
 
-	@FindBy(xpath = "//a[normalize-space()='Logout']")
+	@FindBy(xpath = "(//nav[@class='woocommerce-MyAccount-navigation']//ul//li)[6]")
 	private WebElement Logoutlink;
 
 	@FindBy(xpath = "//div[@class='woocommerce-MyAccount-content']")
 	private WebElement Content;
-	
-	@FindBy(xpath = "//nav[@class='woocommerce-MyAccount-navigation']") 
+
+	@FindBy(xpath = "//nav[@class='woocommerce-MyAccount-navigation']")
 	private WebElement MyaccountMenu;
+	
+	@FindBy(xpath = "//a[@rel='home']")
+	private WebElement Homeicon;
+	
+	
 
 	public MyAccountpage(WebDriver driver) {
 
@@ -26,6 +32,8 @@ public class MyAccountpage {
 	}
 
 	public void ClickLogoutlink() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0,250)");
 		Logoutlink.click();
 	}
 
@@ -37,5 +45,9 @@ public class MyAccountpage {
 
 		return MyaccountMenu.isDisplayed();
 	}
-
+	
+	public Homepage Clickhomeicon() {
+		Homeicon.click();
+		return new Homepage(driver);
+	}
 }
