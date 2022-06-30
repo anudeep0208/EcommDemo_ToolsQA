@@ -11,6 +11,9 @@ public interface CommonFunctions {
 	public void jsScrolltillElement(WebElement Ele);
 	public void jsScrolltillEnd();
 	public void Actionsclass();
+	public void importantactions();
+	public void testhere();
+	
 	
 	//just adding something here to verify the test branch 
 	//yes i am her after closing the branch 
