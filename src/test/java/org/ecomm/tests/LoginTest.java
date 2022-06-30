@@ -36,6 +36,7 @@ public class LoginTest extends BaseClass {
 		homepage = myaccounthomepage.Clickhomeicon();
 		//captureScreenshot();
 		
+		
 	}
 
 }

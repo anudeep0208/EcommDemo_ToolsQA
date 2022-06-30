@@ -10,6 +10,8 @@ public interface CommonFunctions {
 	public void jsScrollwindowbypixel(int Xvalue, int Yvalue);
 	public void jsScrolltillElement(WebElement Ele);
 	public void jsScrolltillEnd();
+	public void Actionsclass();
+	
 	
 
 }
