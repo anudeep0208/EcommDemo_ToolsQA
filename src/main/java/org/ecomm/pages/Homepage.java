@@ -1,12 +1,16 @@
 package org.ecomm.pages;
 
+import org.ecomm.Baseclass.BaseClass;
+import org.ecomm.utils.CommonFunctions;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
 
-public class Homepage {
+public class Homepage extends BaseClass {
 
 	public WebDriver driver;
 	
@@ -37,15 +41,24 @@ public class Homepage {
 	
 	public void ClickDismissButton() {
 		Dismiss.click();
+		Reporter.log("Clicked on the Dismiss button on the top banner");
 	}
 	
 	public Loginpage ClickMyAccountLink() {
 		 MyAccount.click();
+		 Reporter.log("Clicked on the myaccount button on the top");
 		 return new Loginpage(driver);
 	}
 	
 	public boolean ValidateLogo() {
-		 return Logo.isDisplayed();
+		 boolean flag = Logo.isDisplayed();
+		 if(flag) {
+			 Reporter.log("Verified the Logo on the application homepage");
+			 }
+		 else {
+			 Reporter.log("Failed to verify the Logo on the application homepage");	 
+		 }
+		 return flag;	 
 	}
 
 	public void ClickSearchicon() {
@@ -57,6 +70,5 @@ public class Homepage {
 		Searchinput.sendKeys(Keys.ENTER);
 		return new ProductListPage(driver);
 	}
-	
 	
 }

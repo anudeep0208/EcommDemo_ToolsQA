@@ -3,15 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.ecomm.tests.LoginTest">
+      <class name="org.ecomm.tests.Newdummy">
         <methods>
-          <include name="loadProperties"/>
-          <include name="launchWebDriver"/>
-          <include name="LogoutfromApplication"/>
-          <include name="launchapp"/>
-          <include name="closebrowser"/>
+          <include name="testmethod"/>
         </methods>
-      </class> <!-- org.ecomm.tests.LoginTest -->
+      </class> <!-- org.ecomm.tests.Newdummy -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

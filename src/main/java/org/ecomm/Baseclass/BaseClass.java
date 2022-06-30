@@ -11,7 +11,9 @@ import java.time.Duration;
 import java.util.Properties;
 
 import org.ecomm.utils.BrowserFactory;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -19,7 +21,9 @@ public class BaseClass {
 
 	public static WebDriver driver;
 	public static Properties prop;
-	public String userdirectory = System.getProperty("user.dir");	
+	public static FileInputStream FIS;
+	public static JavascriptExecutor jsexecutor;
+	public String userdirectory = System.getProperty("user.dir");
 
 	@BeforeSuite
 	public void loadProperties() {
@@ -27,8 +31,8 @@ public class BaseClass {
 		prop = new Properties();
 
 		try {
-			FileInputStream fis = new FileInputStream(userdirectory + "\\Propertiesfile\\config.properties");
-			prop.load(fis);
+			FIS = new FileInputStream(userdirectory + "\\Propertiesfile\\config.properties");
+			prop.load(FIS);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -46,7 +50,7 @@ public class BaseClass {
 	public void launchWebDriver() {
 
 		// launch WebDriver
-		driver = BrowserFactory.browserfactory(GetProperty("BrowserName"));
+		driver = BrowserFactory.getBrowserDriver(GetProperty("BrowserName"));
 
 	}
 
@@ -54,16 +58,20 @@ public class BaseClass {
 	public void launchapp() {
 
 		driver.get(GetProperty("Application_url"));
+		Reporter.log("The application has launched succesfully");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(GetProperty("Timeout"))));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Integer.parseInt(GetProperty("Pageloadtimeout"))));
-	
+		driver.manage().timeouts()
+				.pageLoadTimeout(Duration.ofSeconds(Integer.parseInt(GetProperty("Pageloadtimeout"))));
+
 	}
 
 	@AfterSuite
 	public void closebrowser() {
 		driver.quit();
 	}
+
+	// before suite
 
 }
 

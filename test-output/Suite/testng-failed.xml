@@ -7,8 +7,8 @@
         <methods>
           <include name="loadProperties"/>
           <include name="launchWebDriver"/>
-          <include name="LaunchAppandValidatepage"/>
           <include name="launchapp"/>
+          <include name="LogintoApplication"/>
           <include name="closebrowser"/>
         </methods>
       </class> <!-- org.ecomm.tests.LoginTest -->

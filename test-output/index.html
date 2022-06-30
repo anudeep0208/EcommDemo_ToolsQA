@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -115,16 +115,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="org.ecomm.tests.LoginTest" class="method navigator-link" hash-for-method="Navigatetologinpage">Navigatetologinpage</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="org.ecomm.tests.ProductsearchTest" class="method navigator-link" hash-for-method="SearchaProduct">SearchaProduct</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="org.ecomm.tests.ProductsearchTest" class="method navigator-link" hash-for-method="clickSeconditem">clickSeconditem</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -168,28 +158,6 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">org.ecomm.tests.ProductsearchTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="SearchaProduct">
-                  </a> <!-- SearchaProduct -->
-                  <span class="method-name">SearchaProduct</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="clickSeconditem">
-                  </a> <!-- clickSeconditem -->
-                  <span class="method-name">clickSeconditem</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -200,10 +168,12 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;org.ecomm.utils.TestNGlisteners&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;org.ecomm.tests.LoginTest&quot;/&gt;
-      &lt;class name=&quot;org.ecomm.tests.ProductsearchTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -217,7 +187,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (2 classes)</span>
+                <span class="test-name">Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -243,32 +213,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'clickSeconditem')
-data.setCell(0, 2, 'org.ecomm.tests.ProductsearchTest')
-data.setCell(0, 3, 6155);
+data.setCell(0, 1, 'LogintoApplication')
+data.setCell(0, 2, 'org.ecomm.tests.LoginTest')
+data.setCell(0, 3, 2956);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'LogintoApplication')
+data.setCell(1, 1, 'Navigatetologinpage')
 data.setCell(1, 2, 'org.ecomm.tests.LoginTest')
-data.setCell(1, 3, 3369);
+data.setCell(1, 3, 1593);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'SearchaProduct')
-data.setCell(2, 2, 'org.ecomm.tests.ProductsearchTest')
-data.setCell(2, 3, 1825);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'Navigatetologinpage')
-data.setCell(3, 2, 'org.ecomm.tests.LoginTest')
-data.setCell(3, 3, 1654);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'LaunchAppandValidatepage')
-data.setCell(4, 2, 'org.ecomm.tests.LoginTest')
-data.setCell(4, 3, 164);
+data.setCell(2, 1, 'LaunchAppandValidatepage')
+data.setCell(2, 2, 'org.ecomm.tests.LoginTest')
+data.setCell(2, 3, 247);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -279,26 +241,26 @@ return data;
             <span class="header-content">Reporter output for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">Navigatetologinpage</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Clicked on the myaccount button on the top</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">LaunchAppandValidatepage</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Clicked on the Dismiss button on the top banner</span>
+                <span class="reporter-method-output">Verified the Logo on the application homepage</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">4 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">org.ecomm.tests.ProductsearchTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">loadProperties</span>
-                <br/>
-                <span class="ignored-method-name">launchWebDriver</span>
-                <br/>
-                <span class="ignored-method-name">launchapp</span>
-                <br/>
-                <span class="ignored-method-name">closebrowser</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -314,41 +276,27 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-suite before">
                 <span class="method-name">launchWebDriver</span>
-                <span class="method-start">6 ms</span>
+                <span class="method-start">7 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-suite before">
                 <span class="method-name">launchapp</span>
-                <span class="method-start">2678 ms</span>
+                <span class="method-start">5278 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">LaunchAppandValidatepage</span>
-                <span class="method-start">12234 ms</span>
+                <span class="method-start">13270 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">Navigatetologinpage</span>
-                <span class="method-start">12402 ms</span>
+                <span class="method-start">13521 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">LogintoApplication</span>
-                <span class="method-start">14057 ms</span>
+                <span class="method-start">15115 ms</span>
               </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">org.ecomm.tests.ProductsearchTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">SearchaProduct</span>
-                <span class="method-start">17428 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">clickSeconditem</span>
-                <span class="method-start">19253 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">org.ecomm.tests.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">closebrowser</span>
-                <span class="method-start">25424 ms</span>
+                <span class="method-start">18085 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -8,7 +8,7 @@ public class BrowserFactory {
 
 	public static WebDriver driver;
 
-	public static WebDriver browserfactory(String Browsername) {
+	public static WebDriver getBrowserDriver(String Browsername) {
 
 		if (Browsername.equalsIgnoreCase("Chrome")) {
 			driver = WebDriverManager.chromedriver().create();
@@ -22,5 +22,7 @@ public class BrowserFactory {
 		return driver;
 
 	}
+	
+	
 
 }
