@@ -1,6 +1,5 @@
 package org.ecomm.pages;
 
-import org.ecomm.Baseclass.BaseClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +9,7 @@ public class ProductListPage {
 
 	public WebDriver driver;
 	public String resulttext;
-	
+
 	@FindBy(xpath = "//div[@class='noo-catalog']")
 	private WebElement ResultlistHeader;
 
@@ -19,10 +18,9 @@ public class ProductListPage {
 
 	@FindBy(xpath = "//p[@class='woocommerce-info']")
 	private WebElement Noitemsfound;
-	
+
 	@FindBy(xpath = "(//div[@class='noo-product-inner']//h3)[2]")
 	private WebElement Seconditem;
-	
 
 	public ProductListPage(WebDriver driver) {
 
@@ -40,18 +38,17 @@ public class ProductListPage {
 
 		if (Resulttext.isDisplayed()) {
 			resulttext = Resulttext.getText();
-		} else if(Noitemsfound.isDisplayed()) {
+		} else if (Noitemsfound.isDisplayed()) {
 			resulttext = Noitemsfound.getText();
 		}
 		return resulttext;
 	}
-	
+
 	public Productdetailpage Selectseconditem() {
-		
+
 		Seconditem.click();
 		return new Productdetailpage(driver);
 
-		
 	}
 
 	public boolean seconditemexist() {

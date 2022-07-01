@@ -68,4 +68,22 @@ public class CommonFunctionsclass extends BaseClass implements CommonFunctions {
 
 	}
 
+	@Override
+	public void Actionsclass() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void importantactions() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void testhere() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
